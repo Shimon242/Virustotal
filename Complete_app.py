@@ -33,15 +33,14 @@ def upload_file():
 
     file_hash = sha256_hash.hexdigest()
 
-    return f"✅ File successfully uploaded to {filepath}<br>SHA256 Hash: {file_hash}"
     # Identify flagged malware
     url = "https://www.virustotal.com/api/v3/files/"
-    complete_url = url + file_hash
+    complete_url = url + str(file_hash)
     headers = {
     "accept": "application/json",
     "x-apikey": "a076c992eeae14dc25c91425d01619338f7a7381c6421383036269407428"
     }
-    response = requests.get(url, headers=headers)
+    response = requests.get(complete_url, headers=headers)
     output = response.text
     match = re.search(r'"malicious":\s*(\d+)', output)
     number = str(match.group(1))
