@@ -1,4 +1,4 @@
-# add to the /var/www/html directory
+# add to the /var/www/html/upload_app directory
 import sys
 import logging
 
