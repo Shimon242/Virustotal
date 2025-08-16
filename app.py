@@ -1,4 +1,4 @@
-# Add this in the /var/www/html directory
+# Add this in the /var/www/html/upload_app directory
 from flask import Flask, request, render_template
 import os
 
