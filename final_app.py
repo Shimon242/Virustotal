@@ -44,4 +44,5 @@ def upload_file():
     output = response.text
     match = re.search(r'"malicious":\s*(\d+)', output)
     number = str(match.group(1))
-    return f"This file was flagged by {number} security vendors"
+    result = f"This file was flagged by {number} security vendors"
+    return render_template('upload.html', message=result)
